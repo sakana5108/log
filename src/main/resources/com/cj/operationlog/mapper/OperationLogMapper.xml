@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cj.operationlog.mapper.OperationLogMapper">
+
+
+    <insert id="save">
+        insert into operation_log (type,request_uri,name,method,params,data,userId,error_message,time)
+        values
+        <foreach collection="operationLogVO" separator="," item="item">
+            (#{item.type},
+            #{item.requestUri},
+            #{item.name},
+            #{item.method},
+            #{item.params},
+            #{item.data},
+            #{item.userId},
+            #{item.errorMessage},
+            #{item.time})
+        </foreach>
+    </insert>
+</mapper>

@@ -1,0 +1,12 @@
+spring:
+  profiles:
+    active: my
+
+###################线程池配置####################
+thread-pool:
+  core-size: 4
+  max-size: 8
+  keep-alive-time: 60 #s
+  queue-Capacity: 100
+
+delay-million-seconds: 1000
